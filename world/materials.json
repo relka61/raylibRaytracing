@@ -1,0 +1,39 @@
+[
+    {
+        "type": 0,
+        "albedo": [0.7, 0.7, 0.7],
+        "fuzz": 0.0,
+        "refractionIndex": 1.0,
+        "texture": "texture.png"
+    },
+    {
+        "type": 0,
+        "albedo": [0.3, 1.0, 0.3],
+        "fuzz": 0.0,
+        "refractionIndex": 1.0
+    },
+    {
+        "type": 2,
+        "albedo": [1.0, 0.8, 0.8],
+        "fuzz": 0.0,
+        "refractionIndex": 1.5
+    },
+    {
+        "type": 3,
+        "albedo": [1.0, 1.0, 1.0],
+        "fuzz": 0.0,
+        "refractionIndex": 0.0
+    },
+    {
+        "type": 3,
+        "albedo": [1.0, 1.0, 1.0],
+        "fuzz": 0.0,
+        "refractionIndex": 0.0
+    },
+    {
+        "type": 0,
+        "albedo": [0.7, 0.7, 0.7],
+        "fuzz": 0.0,
+        "refractionIndex": 1.0
+    }
+]
