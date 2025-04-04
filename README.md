@@ -23,7 +23,7 @@ A real-time raytracer built using **Raylib** and **OpenGL 3.3 Core**.
 
 ---
 
-# This is just a project of myn I'm working on in my free time.
-# My main resource for learning is from [Ray Tracing in One Weekend Book Series](https://raytracing.github.io/)
-# And thanks to everyone who has worked on Raylib
-# I hope you enjoy messing around with my raytracer.
+### This is just a project of myn I'm working on in my free time.
+### My main resource for learning is from [Ray Tracing in One Weekend Book Series](https://raytracing.github.io/)
+### And thanks to everyone who has worked on Raylib
+### I hope you enjoy messing around with my raytracer.
