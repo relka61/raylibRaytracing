@@ -1,7 +1,7 @@
 #include "MenuSystem.h"
 
 MenuSystem::MenuSystem(CustomCamera& cameraRef) 
-    : isVisible(false), camera(cameraRef), samples(10), maxBounces(3), gamma(1.6f), backgroundOpacity(1.0f) {
+    : isVisible(false), camera(cameraRef), samples(8), maxBounces(3), gamma(1.6f), backgroundOpacity(1.0f) {
     menuRect = { 50, 50, 450, 500 };
 }
 
@@ -17,8 +17,8 @@ void MenuSystem::update() {
     if (IsKeyDown(KEY_UP)) camera.camera.fovy = fmax(camera.camera.fovy - 1.0f, 10.0f);
 
     // Adjust samples using LEFT/RIGHT keys
-    if (IsKeyDown(KEY_LEFT)) samples = fmax(samples - 1, 1);
-    if (IsKeyDown(KEY_RIGHT)) samples++;
+    if (IsKeyPressed(KEY_LEFT)) samples = fmax(samples / 2, 1);
+    if (IsKeyPressed(KEY_RIGHT)) samples = samples * 2;
 
     // Adjust maxBounces using Z/X keys
     if (IsKeyPressed(KEY_Z)) maxBounces = fmax(maxBounces - 1, 0);
