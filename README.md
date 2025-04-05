@@ -29,6 +29,7 @@ And thanks to everyone who has worked on Raylib\
 I hope you enjoy messing around with my raytracer.
 
 ---
+---
 
 # The World
 
@@ -50,16 +51,12 @@ This file describes all the materials that objects in your scene can use.
 - **`refractionIndex`**: (Only for dielectric) Defines the index of refraction for the material (e.g., `1.5` for glass).
 - **`texture`**: (Optional) A texture file to define the color reflected instead of the albedo. Use the file name inside the `world` folder (e.g., `"texture.png"`).
 
----
-
 ## spheres.json
 This file defines all the spheres in the scene.
 
 - **`position`**: The center of the sphere in 3D space, given as `[x, y, z]`.
 - **`radius`**: The radius of the sphere.
 - **`materialIndex`**: The index of the material to apply to the sphere. This corresponds to the order of materials in `materials.json`.
-
----
 
 ## primitives.json
 This file defines all the 2D primitives in the scene.
