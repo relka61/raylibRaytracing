@@ -3,7 +3,7 @@
 A real-time raytracer built using **Raylib** and **OpenGL 3.3 Core**.
 
 ## Features
-- Ray tracing with basic primitives (spheres, quads, and more to come later)
+- Ray tracing with basic objecs (spheres, primitives, and more to come later)
 - Realistic lighting model
 - Adjustable camera and scene controls
 - Optimized rendering pipeline using OpenGL shaders
@@ -27,12 +27,12 @@ This is just a project of myn I'm working on in my free time.\
 My main resource for learning is from [Ray Tracing in One Weekend Book Series](https://raytracing.github.io/)\
 And thanks to everyone who has worked on Raylib\
 I hope you enjoy messing around with my raytracer.
-
-
+\
+\
 
 ---
-
-
+\
+\
 
 # The World
 
@@ -65,13 +65,17 @@ This file defines all the spheres in the scene.
 
 ---
 
-## quads.json
-This file defines all the quads (rectangles) in the scene.
+## primitives.json
+This file defines all the 2D primitives in the scene.
 
-- **`origin`**: The starting point (corner) of the quad in 3D space, given as `[x, y, z]`.
-- **`edgeU`**: A vector defining one edge of the quad, starting from the origin.
-- **`edgeV`**: A vector defining the other edge of the quad, starting from the origin. Together with `edgeU`, this defines the plane of the quad.
-- **`materialIndex`**: The index of the material to apply to the quad. This corresponds to the order of materials in `materials.json`.
+- **`origin`**: The starting point (corner) of the primitive in 3D space, given as `[x, y, z]`.
+- **`edgeU`**: A vector defining one edge of the primitive, starting from the origin.
+- **`edgeV`**: A vector defining the other edge of the primitive, starting from the origin. Together with `edgeU`, this defines the plane of the primitive.
+- **`type`**: The type of 2D primitive that this is
+  - `0`: Triangle (by default)
+  - `1`: Quadrilateral
+  - `2`: Disk
+- **`materialIndex`**: The index of the material to apply to the primitive. This corresponds to the order of materials in `materials.json`.
 
 ---
 
