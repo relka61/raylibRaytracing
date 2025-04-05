@@ -29,7 +29,6 @@ And thanks to everyone who has worked on Raylib\
 I hope you enjoy messing around with my raytracer.
 
 ---
----
 
 # The World
 
