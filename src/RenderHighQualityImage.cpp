@@ -6,15 +6,15 @@ void renderHighQualityImage(Shader shader, int seedOffsetLoc, int screenWidth, i
     Image accumulatedImage = GenImageColor(screenWidth, screenHeight, BLACK);
 
     int originalSamples = menuSystem.getSamples();
-    int totalSamples = 1000;
-    int passSampleCount = 500;
+    int totalSamples = 512;
+    int passSampleCount = 128;
     int numPasses = round(totalSamples / passSampleCount);
     SetShaderValue(shader, GetShaderLocation(shader, "samples"), &passSampleCount, SHADER_UNIFORM_INT);
 
 
     for (int pass = 0; pass < numPasses; pass++) {
-        Vector2 seedOffset = { (float)GetRandomValue(1, 1000), (float)GetRandomValue(-1000, 0)};
-        SetShaderValue(shader, seedOffsetLoc, &seedOffset, SHADER_UNIFORM_VEC2);
+        int seedOffset = GetRandomValue(0, 10000);
+        SetShaderValue(shader, seedOffsetLoc, &seedOffset, SHADER_UNIFORM_INT);
 
         BeginTextureMode(renderTexture);
             BeginShaderMode(shader);
@@ -52,8 +52,8 @@ void renderHighQualityImage(Shader shader, int seedOffsetLoc, int screenWidth, i
     // Reset the sample count to the original value
     int defaultSampleCount = originalSamples;
     SetShaderValue(shader, GetShaderLocation(shader, "samples"), &defaultSampleCount, SHADER_UNIFORM_INT);
-    Vector2 seedOffset = { 0.0f, 0.0f};
-    SetShaderValue(shader, seedOffsetLoc, &seedOffset, SHADER_UNIFORM_VEC2);
+    int seedOffset = 0;
+    SetShaderValue(shader, seedOffsetLoc, &seedOffset, SHADER_UNIFORM_INT);
 
     TraceLog(LOG_INFO, "High-quality image saved to %s", outputFileName);
 }
