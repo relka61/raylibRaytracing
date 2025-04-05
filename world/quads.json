@@ -3,12 +3,18 @@
         "origin": [-5.0, 0.0, -5.0],
         "edgeU": [0.0, 5.0, 0.0],
         "edgeV": [0.0, 0.0, 10.0],
-        "materialIndex": 0
+        "materialIndex": 1
     },
     {
         "origin": [5.0, 0.0, -5.0],
         "edgeU": [0.0, 5.0, 0.0],
         "edgeV": [0.0, 0.0, 10.0],
+        "materialIndex": 3
+    },
+    {
+        "origin": [-3.0, 6.0, -3.0],
+        "edgeU": [0.0, 0.0, 6.0],
+        "edgeV": [6.0, 0.0, 0.0],
         "materialIndex": 1
     }
 ]
