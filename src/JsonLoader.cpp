@@ -20,7 +20,7 @@ std::string readFile(const std::string& filePath) {
 }
 
 // Function to parse materials from JSON
-void loadMaterials(const std::string& filePath, int* materialType, Vector3* materialAlbedo, float* materialFuzz, float* materialRefractionIndex, std::string* materialTextures) {
+void loadMaterials(const std::string& filePath, int* materialType, Vector3* materialAlbedo, Vector3* materialEmmisiveColor, float* materialFuzz, float* materialRefractionIndex, std::string* materialTextures) {
     std::string json = readFile(filePath);
     size_t start = 0, end = 0;
     int index = 0;
@@ -48,6 +48,21 @@ void loadMaterials(const std::string& filePath, int* materialType, Vector3* mate
             albedoStream >> materialAlbedo[index].y;
             albedoStream.ignore(1); // Skip comma
             albedoStream >> materialAlbedo[index].z;
+        }
+
+        // Parse emmisiveColor
+        size_t emmisiveColorPos = material.find("\"emmisiveColor\":");
+        if (emmisiveColorPos != std::string::npos) {
+            size_t emmisiveColorStart = material.find("[", emmisiveColorPos);
+            size_t emmisiveColorEnd = material.find("]", emmisiveColorStart);
+            std::string emmisiveColor = material.substr(emmisiveColorStart + 1, emmisiveColorEnd - emmisiveColorStart - 1);
+
+            std::stringstream emmisiveColorStream(emmisiveColor);
+            emmisiveColorStream >> materialEmmisiveColor[index].x;
+            emmisiveColorStream.ignore(1); // Skip comma
+            emmisiveColorStream >> materialEmmisiveColor[index].y;
+            emmisiveColorStream.ignore(1); // Skip comma
+            emmisiveColorStream >> materialEmmisiveColor[index].z;
         }
 
         // Parse fuzz
