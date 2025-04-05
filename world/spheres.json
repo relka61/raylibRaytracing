@@ -2,7 +2,7 @@
     {
         "position": [2.5, -100.05, -1.5],
         "radius": 100.0,
-        "materialIndex": 5
+        "materialIndex": 1
     },
     {
         "position": [0.0, 0.5, -1.0],
@@ -10,13 +10,13 @@
         "materialIndex": 0
     },
     {
-        "position": [4.0, 2.5, -1.0],
+        "position": [3.75, 2.5, -1.0],
         "radius": 1.0,
         "materialIndex": 2
     },
     {
         "position": [-1.0, 1.0, -1.0],
         "radius": 0.5,
-        "materialIndex": 3
+        "materialIndex": 2
     }
 ]
